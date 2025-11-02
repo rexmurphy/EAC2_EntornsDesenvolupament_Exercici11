@@ -114,6 +114,7 @@ public class screen {
 		
 		textEntryEdat = new JTextField();
 		textEntryEdat.setBounds(58, 22, 72, 21);
+		textEntryEdat.setToolTipText(constants.INFO_EDAT_FIELD);
 		panelDadesClients.add(textEntryEdat);
 		originalBorderTextEntryEdat=textEntryEdat.getBorder();
 		
@@ -128,6 +129,7 @@ public class screen {
 		comboBoxLloguer.setModel(new DefaultComboBoxModel<>(new String[] {"Matí", "Tarda", "Nit", "24 hores"}));
 		comboBoxLloguer.setBounds(124, 59, 179, 26);
 		comboBoxLloguer.setSelectedIndex(-1);
+		comboBoxLloguer.setToolTipText(constants.INFO_COMBO_LLOGUER);
 		panelDadesClients.add(comboBoxLloguer);
 		originalBorderComboBoxLloguer=comboBoxLloguer.getBorder();
 		
@@ -135,6 +137,7 @@ public class screen {
 		comboBoxPadro.setModel(new DefaultComboBoxModel<>(new String[] {"SI", "NO"}));
 		comboBoxPadro.setBounds(124, 99, 179, 26);
 		comboBoxPadro.setSelectedIndex(-1);
+		comboBoxPadro.setToolTipText(constants.INFO_COMBO_PADRO);
 		panelDadesClients.add(comboBoxPadro);
 		originalBorderComboBoxPadro=comboBoxPadro.getBorder();
 
@@ -287,12 +290,14 @@ public class screen {
 		textEntryMatricula = new JTextField();
 		textEntryMatricula.setEnabled(false);
 		textEntryMatricula.setBounds(83, 21, 103, 21);
+		textEntryMatricula.setToolTipText(constants.INFO_MATRICULA);
 		originalBorderTextEntryMatricula=textEntryMatricula.getBorder();
 		panelDadesCotxe.add(textEntryMatricula);
 		
 		textEntryLlargadaCotxe = new JTextField();
 		textEntryLlargadaCotxe.setEnabled(false);
 		textEntryLlargadaCotxe.setBounds(272, 21, 76, 21);
+		textEntryLlargadaCotxe.setToolTipText(constants.INFO_LLARGADA_COTXE);
 		originalBorderTextEntryLlargadaCotxe=textEntryLlargadaCotxe.getBorder();
 		panelDadesCotxe.add(textEntryLlargadaCotxe);
 		
@@ -352,6 +357,31 @@ public class screen {
 		textDisplayIva.setEditable(false);
 		textDisplayIva.setBounds(180, 120, 103, 21);
 		panelPreus.add(textDisplayIva);
+		
+		JLabel lblNewLabel = new JLabel("€");
+		lblNewLabel.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel.setBounds(120, 60, 21, 17);
+		panelPreus.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("€");
+		lblNewLabel_1.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_1.setBounds(120, 122, 21, 17);
+		panelPreus.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("€");
+		lblNewLabel_2.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_2.setBounds(290, 60, 21, 17);
+		panelPreus.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("€");
+		lblNewLabel_3.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_3.setBounds(290, 122, 21, 17);
+		panelPreus.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("€");
+		lblNewLabel_4.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_4.setBounds(431, 91, 21, 17);
+		panelPreus.add(lblNewLabel_4);
 		
 		JPanel panelAlertes = new JPanel();
 		panelAlertes.setBorder(new TitledBorder(new LineBorder(new Color(184, 207, 229)), "Errors i Alertes", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));

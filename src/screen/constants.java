@@ -14,6 +14,11 @@ public class constants {
 	public static final String ERROR_LLOGUER_NO_SELECCIONAT="Has de seleccionar un tipus de lloguer";
 	public static final String ERROR_PADRO_NO_SELECCIONAT="Has d’indicar si estàs empadronat o no.";
 	public static final String ERROR_MATRICULA="Introdueix un nombre de matrícula vàlid";
+	public static final String INFO_EDAT_FIELD="Introdueix l'edat del client";
+	public static final String INFO_COMBO_LLOGUER="Selecciona el tipus de lloguer";
+	public static final String INFO_COMBO_PADRO="Indica si estàs o no estàs empadronat";
+	public static final String INFO_MATRICULA="introdueix la matricula amb format 9999XXX";
+	public static final String INFO_LLARGADA_COTXE="Introdueix la llargada del cotxe en metres";
 	
 	
 }
