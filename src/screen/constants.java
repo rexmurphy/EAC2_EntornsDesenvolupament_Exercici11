@@ -15,4 +15,5 @@ public class constants {
 	public static final String ERROR_PADRO_NO_SELECCIONAT="Has d’indicar si estàs empadronat o no.";
 	public static final String ERROR_MATRICULA="Introdueix un nombre de matrícula vàlid";
 	
+	
 }

@@ -39,6 +39,7 @@ public class screen {
     private JComboBox<String> comboBoxPadro; 
     private JButton btnEsborrarDadesCotxe;
     private JButton btnCalcularDadesCotxe;
+    private JButton btnValidarDades;
 	private Border originalBorderTextEntryEdat;
 	private Border originalBorderComboBoxLloguer;
 	private Border originalBorderComboBoxPadro;
@@ -139,7 +140,7 @@ public class screen {
 
 		
 		
-		JButton btnValidarDades = new JButton("VALIDAR");
+		btnValidarDades = new JButton("VALIDAR");
 		btnValidarDades.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -170,7 +171,8 @@ public class screen {
 					user.setPadro(tePadro);
 					noHiHaErrors();
 					
-					habilitarDadesCotxe();
+					habilitarDadesCotxe(true);
+					habilitarDadesClient(false);
 				}
 				catch(NumberFormatException ex) {
 					textDisplayAlertes.setText(constants.ERROR_NOMBRE_ENTER);
@@ -209,6 +211,25 @@ public class screen {
 		panelDadesCotxe.add(lblMetres);
 		
 		btnEsborrarDadesCotxe = new JButton("ESBORRAR TOT");
+		btnEsborrarDadesCotxe.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textEntryMatricula.setText("");
+				textEntryLlargadaCotxe.setText("");
+				textDisplayBase.setText("");
+				textDisplayDescompte.setText("");
+				textDisplayTotalPreu.setText("");
+				textDisplayBaseDte.setText("");
+				textDisplayIva.setText("");
+				textEntryEdat.setText("");
+				comboBoxLloguer.setSelectedIndex(-1);
+				comboBoxPadro.setSelectedIndex(-1);
+				
+				habilitarDadesCotxe(false);
+				habilitarDadesClient(true);
+				textEntryEdat.requestFocusInWindow();
+			}
+			
+		});
 		btnEsborrarDadesCotxe.setEnabled(false);
 		btnEsborrarDadesCotxe.setBounds(56, 66, 144, 27);
 		panelDadesCotxe.add(btnEsborrarDadesCotxe);
@@ -386,12 +407,37 @@ public class screen {
 			
 	}
 	}
-	private void habilitarDadesCotxe() {
-		textEntryMatricula.setEnabled(true);
-		textEntryLlargadaCotxe.setEnabled(true);
-		btnCalcularDadesCotxe.setEnabled(true);
-		btnEsborrarDadesCotxe.setEnabled(true);
+	private void habilitarDadesCotxe(boolean habilitar) {
+		if(habilitar) {
+			textEntryMatricula.setEnabled(true);
+			textEntryLlargadaCotxe.setEnabled(true);
+			btnCalcularDadesCotxe.setEnabled(true);
+			btnEsborrarDadesCotxe.setEnabled(true);
+		}
+		else {
+			textEntryMatricula.setEnabled(false);
+			textEntryLlargadaCotxe.setEnabled(false);
+			btnCalcularDadesCotxe.setEnabled(false);
+			btnEsborrarDadesCotxe.setEnabled(false);
+		}
+		
 	}
+	private void habilitarDadesClient(boolean habilitar) {
+		if(habilitar) {
+			textEntryEdat.setEnabled(true);
+			comboBoxLloguer.setEnabled(true);
+			comboBoxPadro.setEnabled(true);
+			btnValidarDades.setEnabled(true);
+			
+		}
+		else {
+			textEntryEdat.setEnabled(false);
+			comboBoxLloguer.setEnabled(false);
+			comboBoxPadro.setEnabled(false);
+			btnValidarDades.setEnabled(false);
+		}
+	}
+	
 	private double preuLloguer(String tipusLloguer) {
 		double preu=0;
 		if (tipusLloguer.equals(constants.TIPUS_LLOGUER[0])) {
